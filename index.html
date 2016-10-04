@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+  <!--<link href="styles/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="js/jquery1.9.1.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script> -->
+  <title>Hello World</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+  <script>
+	var m = "Hello World";
+  
+	var app = angular.module('app',[]);
+  
+   app.controller("appCtrl", function($scope){
+   $scope.mes = m;
+	   $scope.clickHandler = function (){
+	   $scope.mes = $scope.text;
+	   }
+   });
+   </script>
+</head>
+<body ng-controller="appCtrl">
+ <h1>{{mes}}</h1>
+ <input ng-model="text"/>
+ <button ng-click="clickHandler()">Обновить</button>
+</body>
+</html>
